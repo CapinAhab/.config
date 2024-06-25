@@ -50,3 +50,7 @@ To finish the installation open nvim and run the command `:PlugInstall` to insta
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Nui (Dependency for noice)](https://github.com/MunifTanjim/nui.nvim)
 - [Noice](https://github.com/folke/noice.nvim)
+
+## My lf configuration
+
+My configuration is adapted from the configuration available [here](https://raw.githubusercontent.com/westofer/lf-ranger-keybingings/main/lfrc). It has the same basic keybinds as ranger and uses neovim as the default editor.
