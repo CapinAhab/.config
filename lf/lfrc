@@ -1,5 +1,5 @@
 # interpreter for shell commands (needs to be POSIX compatible)
-set shell sh
+set shell /bin/dash
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to
@@ -10,8 +10,6 @@ set shell sh
 # times.
 set shellopts '-eu'
 set number
-
-set editor nvim
 
 # set internal field separator (IFS) to "\n" for shell commands
 # This is useful to automatically split file names in $fs and $fx properly
@@ -344,7 +342,7 @@ map zs    set ignoredia!
 # text files and a file opener for the rest.
 cmd open ${{
     case $(file --mime-type $f -b) in
-        text/*) $EDITOR $fx;;
+        text/*) nvim $fx;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
@@ -413,3 +411,6 @@ cmd touch ${{
     touch $1
 }}
 
+cmd open-pdf ${{
+    zathura "$f"
+}}
