@@ -414,3 +414,10 @@ cmd touch ${{
 cmd open-pdf ${{
     zathura "$f"
 }}
+
+cmd open ${{
+    case $(file --mime-type -Lb "$f") in
+        application/epub+zip) zathura "$f" ;;
+        *) xdg-open "$f" ;;
+    esac
+}}
