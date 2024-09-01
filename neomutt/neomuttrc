@@ -1,0 +1,47 @@
+set editor = "nvim"
+
+
+set realname = ""
+set from = ""
+
+
+# status bar, date format, finding stuff etc.
+set status_chars = " *%A"
+set status_format = "[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+set date_format = "%d.%m.%Y %H:%M"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set send_charset = "utf-8:iso-8859-1:us-ascii"
+set charset = "utf-8"
+
+#set pager = builtin
+
+set mailcap_path = "~/.config/neomutt/mailcap"
+
+#Imap server
+set folder = "imap://127.0.0.1:1143"
+set imap_user = ""
+set imap_pass = ""
+
+set record = "+Sent"  # Save sent emails in Sent folder
+set postponed = "+Drafts"  # Drafts folder
+set trash = "+Trash"  # Trash folder
+set spoolfile = "+Inbox"
+
+# SMTP server 
+set smtp_url = "smtp://:@127.0.0.1:1025"
+set ssl_force_tls = yes  # Force the use of TLS for secure connections
+
+unset imap_passive
+set mail_check=20 # seconds
+set timeout=10 # seconds
+set imap_check_subscribed=yes
+
+#Force stricter security
+set ssl_starttls = yes
+set ssl_verify_dates = yes
+set ssl_verify_host = yes
